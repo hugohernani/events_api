@@ -1,0 +1,24 @@
+default: &default
+  encoding: unicode
+  # Schema search path. The server defaults to $user,public
+  schema_search_path: partitioning,public
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # Minimum log levels, in increasing order:
+  #   debug5, debug4, debug3, debug2, debug1,
+  #   log, notice, warning, error, fatal, and panic
+  # Defaults to warning.
+  min_messages: log
+
+development:
+  <<: *default
+  database: events_planner_development
+
+test:
+  <<: *default
+  database: events_planner_test
+
+production:
+  <<: *default
+  database: events_planner_production
