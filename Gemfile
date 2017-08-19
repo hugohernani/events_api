@@ -22,11 +22,20 @@ gem 'puma', '~> 3.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise_token_auth'
-gem 'omniauth'
+gem 'devise'
+gem 'grape'
+gem 'grape_logging'
+gem 'doorkeeper'
+
+gem 'kaminari'
+gem 'wine_bouncer' # Authentication, adds swagger documentation
+gem 'api-pagination' # API pagination. Relies on kaminari or will_paginate being present
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors', require: 'rack/cors'
+
+gem 'active_model_serializers'
+gem 'grape-active_model_serializers'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
